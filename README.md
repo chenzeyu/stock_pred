@@ -6,7 +6,6 @@ As for now, 4 stocks have been crawled (Tweets from 2015.03.1 - 2015.03.15):
 * Tesla
 * Twitter
 * Google
-
     The crawled tweets are stored in ```data/aapl.json``` (stock symble.json)
     The data are from Topsy.com.
     Sample data:
