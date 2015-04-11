@@ -5,7 +5,7 @@ URL = "http://otter.topsy.com/search.json"
 lang = 'en'
 perpage = 100
 start_time = Time.new(2015,03,1, "+08:00").to_i
-end_time = Time.new(2015,03,15, "+08:00").to_i
+end_time = Time.new(2015,03,21, "+08:00").to_i
 timestamp = Time.now.to_i
 apikey = '09C43A9B270A470B8EB8F2946A9369F3'
 type = 'tweet'
@@ -31,7 +31,7 @@ query.each do |q|
       offset += json['response']['last_offset'].to_i
       puts "Current Offset: #{offset}"
     }
-    break if offset >= 50000
+    break if offset >= 100000
   end
   merged = []
   jsons.each {|a| merged += a}
