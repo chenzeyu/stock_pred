@@ -1,7 +1,7 @@
 # stock_pred
 
 ## Crawled data:
-As for now, 4 stocks have been crawled (Tweets from 2015.03.1 - 2015.03.15):
+As for now, 4 stocks tweets have been crawled (Tweets from 2015.03.1 - 2015.03.15):
 * Apple
 * Tesla
 * Twitter
@@ -40,6 +40,9 @@ Sample data:
    "trackback_date":1426108306
 }
 ```
+## Previous Stock prices
+stored in data/stock_name.csv
+
 ## Tweet dataset:
 * https://github.com/guyz/twitter-sentiment-dataset
 * http://www.sananalytics.com/lab/twitter-sentiment/
