@@ -5,6 +5,7 @@ import sys
 import os
 import os.path
 import shutil
+import datetime
 
 #jsonfiles = ['tsla.json']
 jsonfiles = ['aapl.json','twtr.json','tsla.json','goog.json']
@@ -18,10 +19,13 @@ for jsonfile in jsonfiles:
         data = json.load(data_file)
     
         fieldnames = ['firstpost_date', 'content']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, lineterminator='\n')
         
         writer.writeheader()
         for datum in data:
-            date = datum['firstpost_date']
+            timestamp = datum['firstpost_date']
+            date = datetime.datetime.fromtimestamp(timestamp).strftime("%d-%m-%Y")
+            
             content = datum['content']
-            writer.writerow({'firstpost_date': str(date), 'content': content.encode('utf-8')})
+            if (timestamp is not None) and (timestamp):
+                writer.writerow({'firstpost_date': str(date), 'content': content.encode('utf-8').replace('\n', ' ').replace('\r', '')})
