@@ -149,6 +149,11 @@ for row in reader:
 f.close()
 
 feature_list = list(set(feature_list))
+
+with open('feature_list.bin', 'wb') as fp:
+    pickle.dump(feature_list, fp)
+fp.close()
+
 training_set = nltk.classify.util.apply_features(extract_features, tweets)
 
 Start = time.time() 
